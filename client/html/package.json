@@ -1,33 +1,33 @@
 {
-  "name": "Spiff",
-  "version": "0.1.0",
-  "description": "Spaceman Spiff Manages Spaces",
-  "homepage": "https://github.com/SYNHAK/spiff/",
-  "bugs": {
-    "url": "https://github.com/SYNHAK/spiff/issues/",
-    "email": "tdfischer@hackerbots.net"
-  },
-  "license": "AGPL-3.0",
-  "contributors": [
-    "Torrie Fischer <tdfischer@hackerbots.net> (https://hackerbots.net/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/SYNHAK/spiff.git"
-  },
+  "name": "spiff",
+  "version": "0.0.0",
   "private": true,
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "ember server",
+    "build": "ember build",
+    "test": "ember test"
+  },
+  "repository": "https://github.com/stefanpenner/ember-cli",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "grunt": "^0.4.2",
-    "grunt-angular-templates": "^0.5.7",
-    "grunt-bower-task": "^0.4.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-htmlmin": "^0.3.0",
-    "grunt-contrib-less": "~0.11.4",
-    "grunt-contrib-sass": "~0.8.1",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.5.3",
-    "grunt-filerev": "^2.1.1",
-    "grunt-usemin": "^2.5.1"
+    "body-parser": "^1.2.0",
+    "broccoli-asset-rev": "0.0.17",
+    "broccoli-ember-hbs-template-compiler": "^1.6.1",
+    "ember-cli": "0.0.41",
+    "ember-cli-bootstrap": "0.0.12",
+    "ember-cli-ember-data": "0.1.0",
+    "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-inject-live-reload": "^1.0.2",
+    "ember-cli-qunit": "0.0.5",
+    "express": "^4.8.5",
+    "glob": "^4.0.5"
   }
 }

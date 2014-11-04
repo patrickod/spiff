@@ -1,110 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="spiffApp">
-<head>
-  <meta charset="utf-8">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spiff</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- build:css app.css -->
-  <link rel="stylesheet" type="text/css" href="../dist/bootstrap.css"/>
-  <link rel="stylesheet" type="text/css" href="../dist/app.css"/>
-  <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.10.4.custom.css"/>
-  <!-- endbuild -->
+    {{BASE_TAG}}
 
-  <script>var CONFIG = {spaceAPI: '/status.json', spiff: '/'};</script>
-  <script src="config.js"></script>
-
-  <!-- build:js deps.js -->
-  <script src="../bower_components/jquery/jquery.js"></script>
-  <script src="../js/reattach.js"></script>
-  <script src="../bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
-  <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
-  <script src="../bower_components/jquery-qrcode/jquery.qrcode.min.js"></script>
-  <script src="../bower_components/underscore/underscore.js"></script>
-  <script src="../bower_components/angular/angular.js"></script>
-  <script src="../bower_components/angular-route/angular-route.js"></script>
-  <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="../bower_components/restangular/src/restangular.js"></script>
-  <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap.js"></script>
-  <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
-  <script src="../bower_components/angular-gravatar/build/md5.js"></script>
-  <script src="../bower_components/angular-gravatar/build/angular-gravatar.js"></script>
-  <script src="../bower_components/showdown/src/showdown.js"></script>
-  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-  <script src="../bower_components/angular-markdown-directive/markdown.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js app.js -->
-  <script src="../js/md5-service.js"></script>
-  <script src="../js/ui/application.js"></script>
-  <script src="../js/ui/directives.js"></script>
-  <script src="../js/ui/messages.js"></script>
-  <script src="../js/ui/spaceapi.js"></script>
-  <script src="../js/ui/spiff.js"></script>
-  <script src="../js/ui/controllers/dashboard.js"></script>
-  <script src="../js/ui/controllers/donate.js"></script>
-  <script src="../js/ui/controllers/editor.js"></script>
-  <script src="../js/ui/controllers/epicenter.js"></script>
-  <script src="../js/ui/controllers/members.js"></script>
-  <script src="../js/ui/controllers/payment.js"></script>
-  <script src="../js/ui/controllers/resources.js"></script>
-  <script src="../js/ui/controllers/sensors.js"></script>
-  <!-- endbuild -->
-
-  <script src="templates.js"></script>
-
-  <title>Spiff</title>
-</head>
-<body>
-<div ng-include="'partials/epicenter.html'"></div>
-<div class="container" ng-controller="MessagesCtrl">
-  <div ng-repeat="message in messages.messages" class="row">
-    <div class="span12">
-      <div class="alert alert-info">{{message.text}}</div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="container" id="canvas" ui-view>
-</div>
-<div class="container" id="footer">
-  <div class="row">
-    <div class="span10">
-      <p class="text-muted"><a href="https://github.com/SYNHAK/spiff">Spaceman Spiff Manages Spaces.</a> | <a href="https://spiff.readthedocs.org/">Documentation</a></p>
-      <p class="text-muted">Spiff is a side-effect of <a
-        class="noisebridge-link" href="https://noisebridge.net">Noisebridge</a>.</p>
-      <p class="text-muted">Made with <span class="heart">❤</span> by hackers for hackers.</p>
-    </div>
-    <!-- <div class="span2" ng-controller="EpicenterCtrl" check-permission="'is_superuser'">
-      <div ng-if="hasPermission">
-        <p><button ng-click="enterAdmin()" class="btn btn-warning">Administration</button></p>
-      </div>
-    </div> -->
-    <div class="span4">
-    </div>
-  </div>
-</div>
-</div>
-<script type="text/ng-template" id="error.html">
-  <div class="modal-header">
-    <h3>Spiff had an issue with what you did.</h3>
-  </div>
-  <div class="modal-body">
-    Something weird happened. Spiff threw a {{status}} and said "<code>{{message}}</code>".
-    <pre ng-if="traceback">{{traceback}}</pre>
-    <p>This is a bug. You might be able to continue.</p>
-  </div>
-  <div class="modal-footer">
-    <button ng-click="close()" class="btn">Dismiss</button>
-  </div>
-</script>
-<script type="text/ng-template" id="no-connection.html">
-  <div class="modal-header">
-    <h3>No Connection</h3>
-  </div>
-  <div class="modal-body">
-    It seems that you're not connected to the 'net. Try that again.
-  </div>
-  <div class="modal-footer">
-    <button ng-click="close()" class="btn">Dismiss</button>
-  </div>
-</script>
-</body>
+    <link rel="stylesheet" href="/ui/assets/vendor.css">
+    <link rel="stylesheet" href="/ui/assets/spiff.css">
+  </head>
+  <body>
+    <script>
+      window.SpiffENV = {{ENV}};
+      window.EmberENV = window.SpiffENV.EmberENV;
+    </script>
+    <script src="/ui/assets/vendor.js"></script>
+    <script src="/ui/assets/spiff.js"></script>
+    <script>
+      window.Spiff = require('spiff/app')['default'].create(SpiffENV.APP);
+    </script>
+  </body>
+</html>
