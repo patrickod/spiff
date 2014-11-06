@@ -1,0 +1,17 @@
+<h3>Membership List</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each member in model}}
+      <tr {{action 'viewMember' member}}>
+        <td>{{member.id}}</td>
+        <td>{{member.email}}</td>
+      </tr>
+    {{/each}}
+  </tbody
+</table>

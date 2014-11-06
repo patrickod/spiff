@@ -9,5 +9,20 @@
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
     "ember-cli-test-loader": "rwjblue/ember-cli-test-loader#0.0.4",
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2"
-  }
+  },
+  "version": "0.0.1",
+  "homepage": "https://github.com/phrobo/spiff",
+  "authors": [
+    "Patrick O'Doherty <p@trickod.com>"
+  ],
+  "description": "Spaceman spiff manages spaces. This is his web ui",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ]
 }

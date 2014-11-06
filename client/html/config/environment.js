@@ -26,6 +26,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    // use # based URLs in development
+    ENV.locationType = 'hash';
   }
 
   if (environment === 'test') {
