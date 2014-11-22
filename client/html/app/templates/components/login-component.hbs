@@ -1,0 +1,12 @@
+<form role="form">
+  <div class="form-group">
+    <label for="userName">Username</label>
+    {{input type="email" class="form-control" placeholder="Your username" value=userName }}
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    {{input type="password" class="form-control" placeholder="Password" value=password }}
+  </div>
+  <button {{action "sendAction"}} class="btn btn-default">Submit</button>
+</form>
+
