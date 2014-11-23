@@ -7,20 +7,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{BASE_TAG}}
+    {{content-for 'head'}}
 
     <link rel="stylesheet" href="/ui/assets/vendor.css">
     <link rel="stylesheet" href="/ui/assets/spiff.css">
   </head>
   <body>
-    <script>
-      window.SpiffENV = {{ENV}};
-      window.EmberENV = window.SpiffENV.EmberENV;
-    </script>
+    {{content-for 'body'}}
+
     <script src="/ui/assets/vendor.js"></script>
     <script src="/ui/assets/spiff.js"></script>
-    <script>
-      window.Spiff = require('spiff/app')['default'].create(SpiffENV.APP);
-    </script>
   </body>
 </html>

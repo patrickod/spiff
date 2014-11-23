@@ -220,6 +220,7 @@ class IdentityResource(ModelResource):
     return self.create_response(request, {'success': True})
 
   def login(self, request, **kwargs):
+    print "I'm logging in!"
     self.method_check(request, allowed=['post'])
     data = self.deserialize(request, request.body,
         format=request.META.get('CONTENT_TYPE', 'application/json'))
